@@ -1,0 +1,15 @@
+C:\Users\Admin\Desktop\Perekhodko_HW\Seminar04\bin\Debug\net6.0\Seminar04.exe
+C:\Users\Admin\Desktop\Perekhodko_HW\Seminar04\bin\Debug\net6.0\Seminar04.deps.json
+C:\Users\Admin\Desktop\Perekhodko_HW\Seminar04\bin\Debug\net6.0\Seminar04.runtimeconfig.json
+C:\Users\Admin\Desktop\Perekhodko_HW\Seminar04\bin\Debug\net6.0\Seminar04.dll
+C:\Users\Admin\Desktop\Perekhodko_HW\Seminar04\bin\Debug\net6.0\Seminar04.pdb
+C:\Users\Admin\Desktop\Perekhodko_HW\Seminar04\obj\Debug\net6.0\Seminar04.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Perekhodko_HW\Seminar04\obj\Debug\net6.0\Seminar04.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\Perekhodko_HW\Seminar04\obj\Debug\net6.0\Seminar04.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Perekhodko_HW\Seminar04\obj\Debug\net6.0\Seminar04.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Perekhodko_HW\Seminar04\obj\Debug\net6.0\Seminar04.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Perekhodko_HW\Seminar04\obj\Debug\net6.0\Seminar04.dll
+C:\Users\Admin\Desktop\Perekhodko_HW\Seminar04\obj\Debug\net6.0\refint\Seminar04.dll
+C:\Users\Admin\Desktop\Perekhodko_HW\Seminar04\obj\Debug\net6.0\Seminar04.pdb
+C:\Users\Admin\Desktop\Perekhodko_HW\Seminar04\obj\Debug\net6.0\Seminar04.genruntimeconfig.cache
+C:\Users\Admin\Desktop\Perekhodko_HW\Seminar04\obj\Debug\net6.0\ref\Seminar04.dll
