@@ -47,7 +47,7 @@ Console.WriteLine(Degree(A, B)); */
 
 //Решение через написание и объявление функции
 
-int SumOfDigits(int num)
+/* int SumOfDigits(int num)
 {
     int sum = 0;
     if (num < 10 && num > -10)
@@ -73,7 +73,7 @@ int SumOfDigits(int num)
 Console.WriteLine("Введите число N");
 int N = int.Parse(Console.ReadLine());
 
-Console.WriteLine("Sum of digites = " + SumOfDigits(N));
+Console.WriteLine("Sum of digites = " + SumOfDigits(N)); */
 
 //////////////////////////////////////////////////////////
 
@@ -81,3 +81,23 @@ Console.WriteLine("Sum of digites = " + SumOfDigits(N));
 из 8 элементов и выводит их на экран.
 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 6, 1, 33 -> [6, 1, 33] */
+
+int[] arr = new int[5];
+
+Console.Write(" [");
+int i = 0;
+for (; i < arr.Length; i++)
+{
+    arr[i] = new Random().Next(0, 100);
+
+    if (i == arr.Length - 1)
+    {
+        Console.Write(" " + arr[i]);
+    }
+    else
+    {
+        Console.Write(" " + arr[i] + ",");
+    }
+}
+Console.Write(" ] ");
+
