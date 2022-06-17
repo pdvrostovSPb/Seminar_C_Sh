@@ -53,7 +53,6 @@ int SumOfDigits(int num)
     if (num < 10 && num > -10)
     {
         sum = num;
-        return Math.Abs(sum);
     }
     else
     {
@@ -67,13 +66,14 @@ int SumOfDigits(int num)
             }
             num = num / 10;
         }
-        return Math.Abs(sum);
+
     }
+    return Math.Abs(sum);
 }
 Console.WriteLine("Введите число N");
 int N = int.Parse(Console.ReadLine());
 
-Console.WriteLine(SumOfDigits(N));
+Console.WriteLine("Sum of digites = " + SumOfDigits(N));
 
 //////////////////////////////////////////////////////////
 
