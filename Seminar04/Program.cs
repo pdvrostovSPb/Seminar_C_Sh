@@ -82,7 +82,7 @@ Console.WriteLine("Sum of digites = " + SumOfDigits(N)); */
 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 6, 1, 33 -> [6, 1, 33] */
 
-int[] arr = new int[5];
+/* int[] arr = new int[8];
 
 Console.Write(" [");
 int i = 0;
@@ -99,5 +99,31 @@ for (; i < arr.Length; i++)
         Console.Write(" " + arr[i] + ",");
     }
 }
+Console.Write(" ] "); */
+
+/* Задача 29: Напишите программу, которая задаёт массив
+из N элементов и выводит их на экран.*/
+
+Console.WriteLine
+("Введите число N элементов массива случайных чисел от 1 до 100");
+int N = int.Parse(System.Console.ReadLine());
+
+Console.Write("[");
+
+int[] arr = new int[N];
+for (int i = 0; i < arr.Length; i++)
+{
+    arr[i] = new Random().Next(0, 100);
+
+    if (i == arr.Length - 1)
+    {
+        Console.Write(" " + arr[i]);
+    }
+    else
+    {
+        Console.Write(" " + arr[i] + ",");
+    }
+}
+
 Console.Write(" ] ");
 
