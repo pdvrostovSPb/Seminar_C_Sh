@@ -32,14 +32,14 @@ Console.WriteLine("Четных чисел в массиве  " + chch); */
 double sum = 0;
 for (int i = 0; i < arr.Length; i++)
 {
-    arr[i] = new Random().Next();
+    arr[i] = new Random().Next(0, 31) + new Random().NextDouble();
+    arr[i] = Math.Round(arr[i], 2);
     Console.Write(arr[i] + "  ");
 
     if (i % 2 != 0) sum = sum + arr[i];
 }
-
 Console.WriteLine();
-Console.WriteLine("Сумма элементов на нечетных позициях = " + sum); */
+Console.WriteLine("Сумма элементов на нечетных позициях = " + Math.Round(sum, 2)); */
 
 ///////////////////////////////////////////////////////
 
@@ -47,65 +47,30 @@ Console.WriteLine("Сумма элементов на нечетных пози�
 разницу между максимальным и минимальным
 элементов массива. */
 
-/* double[] arr = new double[5];
-
-double max = arr[1];
-double min = arr[1];
-double dif = 0;
-
-for (int i = 0; i < arr.Length; i++)
-{
-    arr[i] = new Random().Next(1, 101);
-    Console.Write(arr[i] + "  ");
-
-    if (arr[i] > max)  max = arr[i];
-    if (arr[i] < min) min = arr[i];
-}
-
-dif = max - min;
-
-Console.WriteLine();
-Console.WriteLine("Разность между максимальным и минимальным элементами = " + dif); */
-
-void print(double[] arr)
+/* void PrintArr(double[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write(arr[i] + " ");
+        Console.Write(arr[i] + "  ");
     }
+    Console.WriteLine();
 }
-Console.WriteLine();
- 
-double[] arr = new double[10];
-for (int i = 0; i < arr.Length; i++)
-{
-    arr[i] = new Random().Next(0, 10) + new Random().NextDouble();
-    arr[i] = Math.Round(arr[i], 2);
-}
- 
-print(arr);
- 
-double max = arr[0];
-double min = arr[0];
-double dif = 0;
 
- 
-for (int i = 0; i < arr.Length; i++)
+double[] coll = new double[8];
+for (int i = 0; i < coll.Length; i++)
 {
-    if (arr[i] > max)
-    {
-        max = arr[i];
-    }
- 
-    if (arr[i] < min)
-    {
-        min = arr[i];
-    }
+    coll[i] = new Random().Next(0, 100) + new Random().NextDouble();
+    coll[i] = Math.Round(coll[i], 2);
 }
- 
-dif = max - min;
-dif = Math.Round(dif, 2); 
-Console.WriteLine();
-Console.WriteLine("Максимальное число в массиве: " + max);
-Console.WriteLine("Минимальное число в массиве: " + min);
-Console.WriteLine("Разница между максимальным и минимальным числом: " + dif);
+PrintArr(coll);
+
+double max = coll[0];
+double min = coll[0];
+for (int i = 0; i < coll.Length; i++)
+{
+    if (coll[i] > max) max = coll[i];
+    if (coll[i] < min) min = coll[i];
+}
+Console.WriteLine("max = " + max);
+Console.WriteLine("min = " + min);
+Console.WriteLine("Разность между max и min = " + Math.Round((max - min), 2)); */
