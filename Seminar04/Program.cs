@@ -104,7 +104,7 @@ Console.Write(" ] "); */
 /* Задача 29: Напишите программу, которая задаёт массив
 из N элементов и выводит их на экран.*/
 
-Console.WriteLine
+/* Console.WriteLine
 ("Введите число N элементов массива случайных чисел от 1 до 100");
 int N = int.Parse(System.Console.ReadLine());
 
@@ -125,5 +125,96 @@ for (int i = 0; i < arr.Length; i++)
     }
 }
 
-Console.Write(" ] ");
+Console.Write(" ] "); */
+/* 
+void print(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write(arr[i] + " ");
+    }
+    Console.WriteLine();
+}
+
+int[] mass = new int[123];
+for (int i = 0; i < mass.Length; i++)
+{
+    mass[i] = new Random().Next(0, 10);
+}
+print(mass);
+
+int count = 0;
+for (int i = 0; i < mass.Length; i++)
+{
+    if (mass[i] > 9 && mass[i] < 100)
+        count++;
+}
+Console.WriteLine(count); */
+
+/* int a = 10;
+int b = 5;
+int c = 4;
+if (a + b > c && a + c > b && c + b > a)
+{
+    Console.WriteLine("Из данных a,b,c можно построить треугольник");
+}
+else
+{
+    Console.WriteLine("Из данных a,b,c нельзя построить треугольник");
+} */
+
+/* Console.WriteLine("Введите число");
+int a = int.Parse(Console.ReadLine());
+
+int save = a;
+int count = 0;
+while (a > 0)
+{
+    a = a / 2;
+    count++;
+}
+
+void Print(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write(arr[i] + " ");
+    }
+    Console.WriteLine();
+}
+
+int[] mass = new int[count];
+
+for (int i = 0; i < mass.Length; i++)
+{
+    mass[i] = save % 2;
+    save = save / 2;
+}
+Print(mass);
+Console.WriteLine();
+
+int s;
+for (int i = 0; i < mass.Length/2; i++)
+{
+    s = mass[i];
+    mass[i] = mass[mass.Length - 1 - i];
+    mass[mass.Length - 1 - i] = s;
+}
+
+Print(mass); */
+
+/* Console.WriteLine("Введите число ");
+int a = int.Parse(Console.ReadLine());
+string s = string.Empty;
+while (a > 0)
+{
+    
+         Console.Write(a % 2); // для проверки
+    
+     
+    s = a % 2 + s; 
+    a = a/2;
+}
+Console.WriteLine();
+Console.Write(s); */
 
