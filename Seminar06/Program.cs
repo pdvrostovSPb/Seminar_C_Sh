@@ -78,17 +78,16 @@ Console.WriteLine("Введите число b2 ");
 double b2 = double.Parse(Console.ReadLine());
 Console.WriteLine("Введите число k2 ");
 double k2 = double.Parse(Console.ReadLine());
-double x = (b2-b1)/(k1-k2);
-double y = k1*x + b1;
-
-Console.WriteLine(x + "," + y); */
-
-/* if(y == k2*x + b2)
- {
-    Console.WriteLine(x + "," + y);
- 
- }
- */
+if (k1 == k2)
+{
+    Console.WriteLine("прямые не пересекаются");
+}
+else
+{
+    double x = (b2 - b1) / (k1 - k2);
+    double y = k1 * x + b1;
+    Console.WriteLine(x + " , " + y);
+}
 
 
 ////////////////////////////////////////////////////////
@@ -166,3 +165,74 @@ for (int i = 0; i < mass.Length; i++)
 }
 Console.WriteLine(sumPos);
 Console.WriteLine(sumNeg); */
+
+// Найти в заданном двумерном массиве квадрат кадого элемента с четным индексом строки и столбца
+
+/* void Print(int[,] arr)
+{
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            Console.Write(arr[i, j] + "\t"); // \t - табуляция, двойной отступ
+        }
+        Console.WriteLine();
+    }
+
+}
+int m = 3, n = 4;
+int[,] mass = new int[m, n];
+
+for (int i = 0; i < mass.GetLength(0); i++) // перебирает каждый элемент массива в строке
+{
+    for (int j = 0; j < mass.GetLength(1); j++) // перебирает каждый элемент  столбца
+    {
+        mass[i, j] = new Random().Next(0, 10);
+    }
+}
+Print(mass);
+Console.WriteLine();
+
+for (int i = 0; i < mass.GetLength(0); i = i+2) // i = i+2 перебирает каждый четный элемент массива в строке
+{
+    for (int j = 0; j < mass.GetLength(1); j = j+2) // j = j+2 перебирает каждый четный элемент столбца
+    {
+         mass[i, j] = mass[i, j] * mass[i, j];
+    }
+}
+
+Print(mass); */
+
+///////
+
+/* void Print(int[,] arr)
+{
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            Console.Write(arr[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+
+}
+int summ = 0;
+int m = 3, n = 4;
+int[,] mass = new int[m, n]; //создание и задание размера
+for (int i = 0; i < mass.GetLength(0); i++)
+{
+    for (int j = 0; j < mass.GetLength(1); j++)
+    {
+        mass[i, j] = new Random().Next(0, 10);
+        if(i==j)
+        {
+            summ = summ + mass[i, j];
+        }
+    }
+}
+
+Print(mass);
+Console.WriteLine();
+Print(mass); 
+Console.WriteLine("сумма по диагонали " + summ); */
