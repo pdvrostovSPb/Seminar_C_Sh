@@ -90,7 +90,7 @@ else
 Среднее арифметическое каждого
 столбца: 4,6; 5,6; 3,6; 3. */
 
-/*  void PrintArray(int[,] arr)
+void PrintArray(int[,] arr)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
     {
@@ -125,4 +125,4 @@ for (int i = 0; i < mass.GetLength(1); i++)
     Console.Write(Math.Round(sumColumn / m, 2) + " ; ");
     sumColumn = 0;
 } 
-*/
+
