@@ -1,6 +1,43 @@
 ﻿/* Задача 54: Задайте двумерный массив. Напишите программу, которая
 упорядочит по убыванию элементы каждой строки двумерного массива. */
 
+void PrintArray(int[,] arr)
+{
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            Console.Write(arr[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+}
+
+int[,] mass = new int[4, 5];
+for (int i = 0; i < mass.GetLength(0); i++)
+{
+    for (int j = 0; j < mass.GetLength(1); j++)
+    {
+        mass[i, j] = new Random().Next(0, 10);
+    }
+}
+PrintArray(mass);
+Console.WriteLine();
+
+for (int i = 0; i < mass.GetLength(0); i++)
+{
+    for (int j = 0; j < (mass.GetLength(1) - 1); j++)
+    {
+        /* if (mass[i, j] < mass[i, (j + 1)])
+        {
+            maxTemp = mass[i, j];
+            mass[i, j] = mass[i, (j + 1)];
+            mass[i, (j + 1)] = maxTemp;
+        } */
+    }
+}
+
+PrintArray(mass);
 //////////////////////////////////////////////////////////////////
 
 /* Задача 56: Задайте прямоугольный двумерный массив. Напишите
@@ -55,8 +92,8 @@ while(n < sumLines.Length)
 }
 Console.WriteLine();
 Console.WriteLine("Минимальная сумма элементов у строки номер "
-                    + (pointerSumLine + 1)); */
-
+                    + (pointerSumLine + 1));
+ */
 //////////////////////////////////////////////////////////////////
 
 /* Задача 58: Задайте две матрицы. Напишите программу, которая будет
