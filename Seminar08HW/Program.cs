@@ -6,7 +6,7 @@
 /* Задача 56: Задайте прямоугольный двумерный массив. Напишите
 программу, которая будет находить строку с наименьшей суммой элементов. */
 
-/* void PrintArray(int[,] arr)
+void PrintArray(int[,] arr)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
     {
@@ -32,22 +32,18 @@ Console.WriteLine();
 int[] sumLines = new int[mass.GetLength(0)];
 for (int i = 0; i < sumLines.Length; i++)
 {
-    for (int k = i; k < (i + 1); k++)
-    {
-
         for (int l = 0; l < mass.GetLength(1); l++)
         {
-            sumLines[i] = sumLines[i] + mass[k, l];
+            sumLines[i] = sumLines[i] + mass[i, l];
         }
         Console.Write(sumLines[i] + "   ");
-    }
-}
-int minSumLine = sumLines[0];
+         }
+
 int pointerSumLine = 0;
 int n = 0;
 while(n < sumLines.Length)
 {
-    if (minSumLine > sumLines[n])
+    if (sumLines[pointerSumLine] > sumLines[n])
     {
         pointerSumLine = n;
     }
@@ -55,7 +51,31 @@ while(n < sumLines.Length)
 }
 Console.WriteLine();
 Console.WriteLine("Минимальная сумма элементов у строки номер "
-                    + (pointerSumLine + 1)); */
+                    + (pointerSumLine + 1));
+
+// подумать
+/* n надо завязать на i
+у меня такая же проблема 
+int indexSum = 0;
+int minSum = 9999999;
+
+for (int i = 0; i < mass.GetLength(0); i++)
+{
+    int sum = 0;
+    for (int j = 0; j < mass.GetLength(1); j++)
+    {
+        sum = sum + mass[i, j];
+    }
+    if (sum <= minSum)
+    {
+        minSum = sum;
+        indexSum=i+1;
+    }
+     
+     Console.WriteLine( $"Строка: {i+1} Сумма: {sum}");
+}
+Console.Write("Строка с минимальной суммой: " +(indexSum)); */
+
 
 //////////////////////////////////////////////////////////////////
 
