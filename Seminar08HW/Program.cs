@@ -91,7 +91,7 @@ while (n < sumLines.Length)
 }
 Console.WriteLine();
 Console.WriteLine("Минимальная сумма элементов у строки номер "
-                    + (pointerSumLine + 1)); */
+                 + (pointerSumLine + 1)); */
 
 /////////////////////////////////////////////////////////////////
 
@@ -184,180 +184,27 @@ for (int i = 0; i < arr3.GetLength(0); i++)
         }
     }
 }
-PrintArray3(arr3); */
+PrintArray3(arr3);
 
-int address = 0;
-for (int i = 0; i < arr3.GetLength(0); i++)
+for (int i = 0; i < arr3.GetLength(0) - 1; i++)
 {
-    for (int j = 0; j < arr3.GetLength(1); j++)
+    for (int j = 0; j < arr3.GetLength(1) - 1; j++)
     {
-        for (int k = 0; k < arr3.GetLength(2); k++)
+        for (int k = 0; k < arr3.GetLength(2) - 1; k++)
         {
-            uniq[address] = arr3[i, j, k];
-
-            for (int m = 0; m < address; m++)
+            for (int l = 0; l < arr3.GetLength(2) - 1; l++)
             {
-                if (uniq[m] == uniq[address])
+                int count = 0;
+                if (arr3[i, j, l] == arr3[i, j, l + 1])
                 {
-                    uniq[address] = arr3[i, j, k] + 1;
+                    arr3[i, j, l] = new Random().Next(10, 100);
+                    count++;
                 }
             }
-
-            Console.Write(uniq[address] + "   ");
-            address++;
-        }
-        
-    }
-    
-}
- */
-void PrintInt3(int[,,] array) 
-{ 
-    for (int i = 0; i < array.GetLength(0); i++) 
-    { 
-        for (int j = 0; j < array.GetLength(1); j++) 
-        { 
-            for (int k = 0; k < array.GetLength(2); k++) 
-            { 
-                Console.WriteLine($"array[{i}, {j}, {k}] = {array[i, j, k]}"); 
-            } 
-        } 
-    } 
-}
- 
-int[,,] array5 = new int[2, 2, 6]; 
-int count = 0; 
-while (count <= array5.Length) // пока не заполним весь массив 
-{ 
-    for (int i = 0; i < array5.GetLength(0); i++)  
-    { 
-        for (int j = 0; j < array5.GetLength(1); j++) 
-        { 
-            for (int k = 0; k < array5.GetLength(2); k++) 
-            { 
-                int rand = new Random().Next(10, 100); 
-                bool flag = false; // флаг найденного повторяющегося числа 
-                // далее проверка уже заполненных ячеек на идентичность с rand 
-                for (int i_new = 0; i_new <= i; i_new++)  
-                { 
-                    for (int j_new = 0; j_new <= j; j_new++) 
-                    { 
-                        for (int k_new = 0; k_new <= k; k_new++) 
-                        { 
-                            if (array5[i_new, j_new, k_new] == rand) // если нашли уже такое число 
-                            { 
-                                flag = true; // выставляем флаг и выходим из цикла проверки заполненнного массива 
-                                break; // выход из цикла for (int k_new = 0; k_new <= k; k_new++) 
-                            } 
-                        } 
-                        if (flag == true)  
-                        { 
-                            break; // выход из цикла for (int j_new = 0; j_new <= j; j_new++) 
-                        } 
-                    } 
-                    if (flag == true) 
-                    { 
-                        break; // выход из цикла for (int i_new = 0; i_new <= i; i_new++)  
-                    } 
-                } 
-                if (flag == false) // если rand неповторяющееся число 
-                { 
-                    array5[i, j, k] = rand; 
-                    count++; 
-                } 
-                else  
-                { 
-                    k--; // иначе уменьшаем индекс, чтоб новое число записать в эту же ячейку 
-                } 
-            } 
-        } 
-    } 
-} 
-PrintInt3(array5);
-
-
-/////////////////////////////////////////////////////////////////
-/* Задача 62: Заполните спирально массив 4 на 4. */
-
-/* void PrintInt2(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write(array[i, j] + "\t");
-        }
-        Console.WriteLine();
-    }
-    Console.WriteLine();
-}
- 
-Console.Write("Введите количество строк массива: ");
-int n = int.Parse(Console.ReadLine());
-Console.Write("Введите количество столбцов массива: ");
-int m = int.Parse(Console.ReadLine());
-int[,] array6 = new int[n, m];
-int number = 1; // элемент массива
-int row = array6.GetLength(0);
-int column = array6.GetLength(1);
-int i = 0; // индекс по строкам
-int j = 0; // индекс по столбцам
-int circle = 0; // номер обхода
-int location = 0; // 0 - right, 1 - down, 2 - left, 3 - up
-while (number <= array6.Length)
-{
-    array6[i, j] = number;
-    if (location == 0 && i == 0 + circle && j < array6.GetLength(1) - circle) // вправо
-    {
-    j++; // вправо по строке
-    if (j == (array6.GetLength(1) - circle)) // дошли до конца строки
-    {
-        location = 1; // в состояние "вниз"
-        j--; // чтоб не зайти за пределы строки
-        i++; // чтоб начать со следующего элемента
-    }
-}
-else if (location == 1 && j == array6.GetLength(1) - 1 - circle && i < array6.GetLength(0) - circle) // вниз
-{
-    i++; // вниз по столбцу
-    if (i == (array6.GetLength(0) - circle)) // дошли до конца столбца
-    {
-        location = 2; // в состояние "влево"
-        i--; // чтоб не зайти за пределы столбца
-        j--; // чтоб начать со следующего элемента
-    }
-}
-else if (location == 2 && i == array6.GetLength(0) - 1 - circle && j >= 0 + circle) // влево
-{
-    j--; // влево по строке
-    if (j < 0 + circle) // дошли до начала строки
-    {
-        location = 3; // в состояние "вверх"
-        j++; // чтоб не зайти за пределы строки
-        i--; // чтоб начать со следующего элемента
-    }
-}
-else if (location == 3 && j == 0 + circle && i >= 0 + circle) // вверх
-    {
-        i--; // вверх по столбцу
-        if (i < 1 + circle) // дошли до верха столбца
-        {
-            location = 0; // в состояние "вправо"
-            i++; // чтоб не зайти за пределы столбца
-            j++; // чтоб начать со следующего элемента
-            circle++; // переходим на следующий оборот спирали
-        }
-    }
-    number++;
-}
-PrintInt2(array6); */
-
-
-/* void DisplayArray(int[,] a)
-           
         }
     }
 }
+PrintArray3(arr3); */
 
 /////////////////////////////////////////////////////////////////
 
@@ -376,22 +223,33 @@ PrintInt2(array6); */
 }
 
 int[,] mass = new int[4, 4];
-int i = 0, j = 0;
+int i = 0;
+int j = 0;
 int a = 1;
 int p = 4;
 while (p > 0)
 {
     int k = 0;
-    do { mass[i, j++] = a++; }
-    while (++k < p - 1);
-    for (k = 0; k < p - 1; k++) mass[i++, j] = a++;
-    for (k = 0; k < p - 1; k++) mass[i, j--] = a++;
-    for (k = 0; k < p - 1; k++) mass[i--, j] = a++;
-
-    ++i; ++j; p = p < 2 ? 0 : p - 2;
+    do
+    {
+        mass[i, j++] = a++;
+    } while (++k < p - 1);
+    for (k = 0; k < p - 1; k++)
+    {
+        mass[i++, j] = a++;
+    }
+    for (k = 0; k < p - 1; k++)
+    {
+        mass[i, j--] = a++;
+    }
+    for (k = 0; k < p - 1; k++)
+    {
+        mass[i--, j] = a++;
+    }
+    i++;
+    j++;
+    p = p < 2 ? 0 : p - 2;
 }
 
 PrintArray(mass);
 Console.WriteLine(); */
-
-
