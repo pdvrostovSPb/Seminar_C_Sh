@@ -190,7 +190,6 @@ for (int i = 0; i < arr3.GetLength(0); i++)
 PrintArray3(arr3);
 
 
-int address = 0;
 for (int i = 0; i < arr3.GetLength(0); i++)
 {
     for (int j = 0; j < arr3.GetLength(1); j++)
