@@ -11,6 +11,50 @@
 - 1, 7, 0, 1
  */
 
+void PrintArray(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write(arr[i] + "    ");
+    }
+    Console.WriteLine();
+}
+
+int Degree(int number, int degree)
+{
+    if (degree == 0) return 1;
+    int result = number * Degree(number, degree - 1);
+    return result;
+}
+
+int[] data = { 0, 1, 1, 1, 1, 0, 0, 0, 1 };
+int[] info = { 2, 3, 3, 1 };
+int pointer = 0;
+int[] decim = new int[info.Length];
+
+for (int i = 0; i < info.Length; i++)
+{
+    int[] binar = new int[info[i]];
+    int k = 0;
+    for (int j = pointer; j < pointer + info[i]; j++)
+    {
+        binar[k] = data[j];
+        k++;
+    }
+    pointer += info[i];
+
+    PrintArray(binar);
+    
+    int sum = 0;
+    for (int m = 0; m < binar.Length; m++)
+    {
+        sum = sum + binar[m] * Degree(2, binar.Length - m - 1);
+    }
+    decim[i] = sum;
+}
+
+PrintArray(decim);
+
 
 /////////////////////////////////////////////////////////////////////////
 
